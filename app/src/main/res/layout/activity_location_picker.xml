@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    tools:context=".LocationPickerActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ripple_bg"
+        app:rb_color="#0099CC"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6">
+
+
+    </com.skyfishjy.library.RippleBackground>
+
+
+
+    <TextView
+        android:id="@+id/imgSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/white_rounded_corner"
+        android:drawableEnd="@drawable/ic_search"
+        android:drawableStart="@drawable/ic_pointer"
+        android:drawablePadding="5dp"
+        android:gravity="start|center_vertical"
+        android:hint="Search Location"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textColorHint="@color/colorPrimary"
+        android:textCursorDrawable="@null"
+        android:textSize="18sp"
+        android:drawableRight="@drawable/ic_search"
+        android:drawableLeft="@drawable/ic_place_red_800_24dp" />
+
+
+    <ImageView
+        android:id="@+id/imgCurrentloc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/imgSearch"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/white_rounded_corner"
+        android:padding="4dp"
+        app:srcCompat="@drawable/ic_my_location"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:contentDescription="Search Location"
+        tools:ignore="VectorDrawableCompat" />
+
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/white_rounded_corner"
+        android:padding="5dp"
+        android:layout_margin="6dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/addressline1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addressline1_hint"
+            android:textSize="16sp"
+            android:lines="5"
+            android:minLines="1"
+            android:inputType="textCapSentences|textMultiLine" />
+
+        <TextView
+            android:id="@+id/addressline2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/citydetails"
+            android:hint="Enter location"
+            android:lines="3"
+            android:paddingTop="3dp"
+            android:minLines="1"
+            android:textSize="16sp"
+            android:inputType="textCapSentences|textMultiLine"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/citydetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="city pincode state"
+            android:paddingLeft="4dp"
+            android:textColor="@color/quantum_grey600"
+            android:textSize="16sp"
+
+
+
+            />
+        <Button
+            android:id="@+id/fab_select_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Continue"
+            android:textColor="@color/quantum_white_100"
+            android:background="@color/quantum_googgreen500"
+            >
+        </Button>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
